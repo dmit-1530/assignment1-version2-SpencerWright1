@@ -3,15 +3,283 @@
     --blue-grey-100: #CFD8DC;
     --blue-grey-200: #B0BEC5;
     --blue-grey-900: #263238;
+    --blue-grey-1200: #78909C;
+    --primary: black;
+    --accent: var(--blue-grey-200);
+    --footer-bg: var(--blue-grey-900);
+    --footer-text: #fff;
+    --max-width: 1200px;
 }
 
 body {
     color: #000;
-    text-align: center; 
+    background: white;
+    text-align: center;
+    margin: 0;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
 }
 
-header, footer {
-    background-color: var(--blue-grey-50);
+header {
+    background: var(--primary);
     color: #fff;
-    padding: 2rem 4rem;   
+    padding: 1rem 0;
+}
+
+header h1 {
+    font-family: "Libre Baskerville", serif;
+}
+
+nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+main {
+    max-width: var(--max-width);
+    margin: 2rem auto;
+    padding: 0 1rem;
+    text-align: left;
+}
+
+/*hero*/
+
+.hero {
+    background: var(--blue-grey-50);
+    padding: 3rem 1rem 1rem 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    font-weight: normal;
+}
+
+.hero h2 {
+    margin-top: 0;
+    font-family: "Libre Baskerville", serif;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 2rem 0;
+}
+
+/*services*/
+.servicetitle {
+    text-align: center;
+}
+
+.servicetitle h2 {
+    font-family: "Libre Baskerville", serif;
+}
+
+.service-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.service-grid>div {
+    flex: 1 1 250px;
+    margin: 0.5rem 0;
+    padding: 1.5rem 1rem;
+    min-width: 220px;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.button:hover {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+/*middle*/
+
+.middle {
+    background: var(--blue-grey-1200);
+    margin: 3rem 0;
+    padding: 2rem;
+    text-align: center;
+    background-size: cover;
+
+}
+
+.middle h2 {
+    font-family: "Libre Baskerville", serif;
+    color: white;
+
+}
+
+.middle .author {
+    margin-top: 1rem;
+    font-style: normal;
+    color: white;
+}
+
+/*architecture*/
+
+.architecture {
+    background: var(--blue-grey-100);
+}
+
+.architecturetitle {
+    text-align: center;
+}
+
+.architecture-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.architecture-grid>div {
+    flex: 1 1 340px;
+    padding: 1.5rem 1rem;
+    min-width: 220px;
+}
+
+.architecture-imgs {
+    display: flex;
+    gap: 2rem;
+    padding: 50px;
+    justify-content: center;
+}
+
+.architecture-imgs img {
+    width: 100%;
+    max-width: 350px;
+}
+
+.subscribe {
+    background: #fff;
+    padding: 2rem;
+    margin: 3rem 0 0 0;
+    text-align: center;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.04);
+}
+
+footer {
+    background: black;
+    color: var(--footer-text);
+    padding: 2rem 0 1rem 0;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.footer-content>div {
+    min-width: 140px;
+}
+
+.footer-content h4 {
+    margin: 0.3rem 0 0.7rem 0;
+    font-size: 1.1rem;
+}
+
+.footer-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-content li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.copyright {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--blue-grey-200);
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+
+    .service-grid,
+    .architecture-grid,
+    .footer-content,
+    .architecture-imgs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 1rem;
+    }
+
+    header,
+    footer {
+        padding: 1rem;
+    }
+
+    main {
+        margin: 1rem 0;
+        padding: 0 0.5rem;
+    }
+
+    .hero,
+    .subscribe,
+    .testimonial {
+        padding: 1.2rem 0.6rem;
+    }
 }
